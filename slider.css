@@ -1,0 +1,180 @@
+@font-face {
+  font-family: vazir;
+  src: url("/font/Vazirmatn-Medium.woff2");
+  font-weight: bolder;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: vazir;
+  transition: all 0.5s ease;
+}
+body {
+  background-color: #d8e0e5;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+li,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.img-res {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+.course-title {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  padding: 100px;
+  font-size: 34px;
+}
+#slideshow-wrap {
+  display: block;
+  height: 350px;
+  min-width: 260px;
+  max-width: 640px;
+  margin: auto;
+  border: 12px solid #efefef;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  margin-top: 20px;
+  position: relative;
+}
+#slideshow-inner {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+}
+#slideshow-inner ul {
+  height: 100%;
+  width: 500%;
+  overflow: hidden;
+  position: relative;
+  left: 0;
+  transition: left 0.8s ease;
+}
+#slideshow-inner ul > li {
+  width: 20%;
+  height: 320px;
+  float: left;
+  position: relative;
+}
+/* #slideshow-inner ul > li > img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+} */
+#slideshow-wrap label:not(.show-description-label) {
+  position: absolute;
+  left: 50%;
+  bottom: -45px;
+  width: 12px;
+  height: 12px;
+  z-index: 100;
+  background-color: rgba(200, 200, 200, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#slideshow-wrap label:active {
+  bottom: -46px;
+}
+#slideshow-wrap label[for="button-1"] {
+  margin-left: -36px;
+}
+#slideshow-wrap label[for="button-2"] {
+  margin-left: -18px;
+}
+#slideshow-wrap #button-1:checked ~ #slideshow-inner > ul {
+  left: 0;
+}
+#slideshow-wrap #button-2:checked ~ #slideshow-inner > ul {
+  left: -100%;
+}
+#slideshow-wrap #button-3:checked ~ #slideshow-inner > ul {
+  left: -200%;
+}
+#slideshow-wrap #button-1:checked ~ label[for="button-1"] {
+  background-color: rgb(90, 89, 89);
+}
+#slideshow-wrap #button-2:checked ~ label[for="button-2"] {
+  background-color: rgb(90, 89, 89);
+}
+#slideshow-wrap #button-3:checked ~ label[for="button-3"] {
+  background-color: rgb(90, 89, 89);
+}
+#slideshow-wrap input[type="radio"] {
+  position: absolute;
+  display: none;
+}
+.description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  z-index: 1000;
+}
+.description input {
+  visibility: hidden;
+}
+.description label {
+  background-color: rgba(255, 255, 255, 1);
+  position: relative;
+  left: -19px;
+  top: 0;
+  width: 40px;
+  height: 26px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  color: #8f8d8d;
+  border-radius: 0 0 15px 0;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+#slideshow-wrap #slideshow-inner:hover .description label {
+  opacity: 1;
+}
+#slideshow-wrap #slideshow-inner input[type="checkbox"]:checked ~ label {
+  opacity: 1;
+}
+
+#slideshow-wrap #slideshow-inner .description .description-text {
+  position: relative;
+  top: -35px;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  color: rgb(65, 65, 65);
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 0.2s;
+  padding: 10px;
+}
+#slideshow-wrap #slideshow-inner .description .description-text h2 {
+  font-size: 22px;
+}
+#slideshow-wrap #slideshow-inner .description .description-text p {
+  font-size: 18px;
+}
+#slideshow-wrap
+  #slideshow-inner
+  .description
+  input:checked
+  ~ .description-text {
+  opacity: 1;
+}
