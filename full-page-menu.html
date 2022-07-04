@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      background-color: #5b80aa;
+      position: relative;
+    }
+
+    label {
+      position: absolute;
+      z-index: 1;
+
+    }
+
+    input#test {
+      display: none;
+    }
+
+    input#test:checked~label {
+      right: 0;
+    }
+
+    svg.burger {
+      position: absolute;
+      top: 12px;
+      left: 0;
+      stroke: #fff;
+      cursor: pointer;
+      font-size: 50px;
+      transition: all .25s ease-in-out;
+    }
+
+    svg.burger:hover,
+    svg.close:hover {
+      stroke: #ccc;
+      cursor: pointer;
+    }
+
+    svg.close {
+      position: absolute;
+      top: 12px;
+      right: -256px;
+      cursor: pointer;
+      opacity: 0;
+
+      transition: all .25 ease-in-out;
+    }
+
+    svg.close line {
+      stroke: #fff;
+      font-size: 50px;
+    }
+
+    /* svg.close{
+    transform: rotate(45deg);
+    transform-origin: 50%;
+  } */
+    input#test:checked~label svg.burger {
+      opacity: 0;
+    }
+
+    input#test:checked~label svg.close {
+      opacity: 1;
+    }
+
+    input#test:checked~.menu {
+      opacity: 1;
+    }
+
+    input#test:checked .main {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-color: tomato;
+      transition: all .8s cubic-bezier(.17, .88, .32, 1.25);
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      opacity: 0;
+    }
+
+    .menu li {
+      margin-top: 50px;
+      transition: all .8s cubic-bezier(.17, .88, .32, 1.25);
+      ;
+    }
+
+    .main {
+      display: block;
+      position: relative;
+      width: 500px;
+      height: 50px;
+      left: 500px;
+      top: 350px;
+      font-size: 45px;
+      font-weight: bold;
+      color: rgb(239, 217, 21);
+    }
+
+    input#test:checked~.menu a {
+      margin-top: 0;
+
+    }
+
+    .main {
+      margin: auto;
+      position: absolute;
+
+
+
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <input type="checkbox" name="" id="test">
+  <label for="test">
+    <svg class="burger" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16" width="30" height="30"
+      fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+      <path d="m2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5" />
+    </svg>
+    <svg class="close" viewPort="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <line x1="1" y1="22" x2="22" y2="1" stroke="black" stroke-width="4" />
+      <line x1="1" y1="1" x2="22" y2="22" stroke="black" stroke-width="4" />
+    </svg>
+  </label>
+  <div class="menu">
+    <a href="">نخست صفحه</a>
+    <a href="">محصولات</a>
+    <a href="">درباره ما </a>
+    <a href="">تماس با ما</a>
+
+  </div>
+  <span class="main">دوره متخصص طراحی وب</span>
+</body>
+
+
+</html>
